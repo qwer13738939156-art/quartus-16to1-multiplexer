@@ -1,0 +1,52 @@
+# ============================================================================
+# File: pins.qsf
+# Description: Quartus Settings File - Pin Assignment Example
+# Board: DE10-Standard (or similar)
+# FPGA: Intel Altera Cyclone V
+# ============================================================================
+
+# 数据输入引脚分配 (16条, 对应in[15:0])
+set_location_assignment PIN_AB12 -to in[0]
+set_location_assignment PIN_AC12 -to in[1]
+set_location_assignment PIN_AD11 -to in[2]
+set_location_assignment PIN_AE11 -to in[3]
+set_location_assignment PIN_AF10 -to in[4]
+set_location_assignment PIN_AG10 -to in[5]
+set_location_assignment PIN_AH9  -to in[6]
+set_location_assignment PIN_AJ9  -to in[7]
+set_location_assignment PIN_AK8  -to in[8]
+set_location_assignment PIN_AL8  -to in[9]
+set_location_assignment PIN_AM7  -to in[10]
+set_location_assignment PIN_AN7  -to in[11]
+set_location_assignment PIN_AO6  -to in[12]
+set_location_assignment PIN_AP6  -to in[13]
+set_location_assignment PIN_AR5  -to in[14]
+set_location_assignment PIN_AS5  -to in[15]
+
+# 选择信号引脚分配 (4条, 对应sel[3:0])
+set_location_assignment PIN_AA14 -to sel[0]
+set_location_assignment PIN_AA13 -to sel[1]
+set_location_assignment PIN_AB13 -to sel[2]
+set_location_assignment PIN_AC13 -to sel[3]
+
+# 输出引脚分配 (1条)
+set_location_assignment PIN_V16 -to out[0]
+set_location_assignment PIN_W16 -to out[1]
+set_location_assignment PIN_Y16 -to out[2]
+set_location_assignment PIN_W15 -to out[3]
+set_location_assignment PIN_Y15 -to out[4]
+set_location_assignment PIN_AA16 -to out[5]
+set_location_assignment PIN_AA15 -to out[6]
+set_location_assignment PIN_AB16 -to out[7]
+
+# 电压标准设置
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to in[*]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sel[*]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to out[*]
+
+# 驱动强度设置 (可选)
+set_instance_assignment -name SLEW_RATE 2 -to out[*]
+
+# 端口属性
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to in[*]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to sel[*]
